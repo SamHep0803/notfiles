@@ -70,7 +70,12 @@ local nmaps = {
         },
         l = {
             name = "lsp",
-            ["."] = { "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", "Code Actions" },
+            ["."] = { "<cmd>Lspsaga code_action<CR>", "Code Actions" },
+            k = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Diagnostic Float" },
+            r = {
+                name = "Refactor",
+                r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+            },
         },
         x = { "<cmd>bp | :bd #<CR>", "Close Buffer" },
         w = {
@@ -85,9 +90,14 @@ local nmaps = {
         },
         o = {
             name = "Open",
-            t = { "<cmd>ToggleTerm direction=horizontal<CR>", "Open Terminal" },
+            t = {
+                name = "Terminal",
+                t = { "<cmd>ToggleTerm direction=float<CR>", "Float Terminal" },
+                v = { "<cmd>ToggleTerm direction=horizontal<CR>", "Horizontal Terminal" },
+            },
         },
         s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
+        t = { "<cmd>ToggleTerm direction=float<CR>", "Float Terminal" },
         z = { "<cmd>ZenMode<CR>", "Toggle Zen Mode" },
         ["<Tab>"] = { "<cmd>Telescope buffers<CR>", "Show Buffers" },
         ["."] = { "<cmd>BufferLineMoveNext<CR>", "Buf Move Right" },
