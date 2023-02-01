@@ -25,7 +25,9 @@ return require('packer').startup(function(use)
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
     }
-    use({ 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
+    use({ 'akinsho/bufferline.nvim',
+        tag = "v3.*",
+        requires = 'nvim-tree/nvim-web-devicons',
         event = 'ColorScheme',
         config = function()
             local highlights = require('rose-pine.plugins.bufferline')
