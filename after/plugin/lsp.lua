@@ -14,13 +14,16 @@ lsp.ensure_installed({
 
 local cmp = require('cmp')
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-Space>"] = cmp.mapping.complete({}),
     ["<CR>"] = cmp.mapping.confirm({ select = true })
 })
+
 local cmp_sources = lsp.defaults.cmp_sources()
+table.insert(cmp_sources, { name = 'nvim_lsp_signature_help' })
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
+    sources = cmp_sources
 })
 
 lsp.configure('sumneko_lua', {
