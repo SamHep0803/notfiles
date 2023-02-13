@@ -57,13 +57,6 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     })
-    use {
-        "rest-nvim/rest.nvim",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("rest-nvim").setup({})
-        end
-    }
 
     use {
         'nvim-tree/nvim-tree.lua',
