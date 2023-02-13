@@ -5,7 +5,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'tsserver',
-    'sumneko_lua',
+    'lua_ls',
     'gopls',
     'tailwindcss',
     'prismals',
